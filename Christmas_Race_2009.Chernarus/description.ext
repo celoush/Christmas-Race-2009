@@ -1,0 +1,185 @@
+onLoadIntroTime = false;
+onLoadMissionTime = false;
+OnLoadMission = $STR_CELO_LOAD_TEXT;
+OnLoadMissionIntro = $STR_CELO_LOAD_TEXT;
+
+showGPS = 1; 
+debriefing = 1; 
+showCompass = 1; 
+showMap = 1; 
+showNotepad = 1; 
+showWatch = 1;
+
+respawn="INSTANT";
+respawndelay=2;
+
+doneKeys[] = {"klic_celo_christmas_2009"};
+
+
+// ---------------- Definice typů objektů ----------
+// --- Není nutné - Lze použít přímo čísla typu  ---
+#define CT_STATIC		0
+#define ST_CENTER		2
+#define ST_MULTI		16
+#define ST_SHADOW		256
+#define ST_NO_RECT	512
+
+// ------------ Základní třídy ----------------
+
+
+class CELO_RscText
+{
+	type=0;
+	idc=4294967295;
+	style=0;
+	h=0.040000;
+	colorBackground[]={0,0,0,0};
+	colorText[]={0.780000,0.080000,0.520000,0.750000};
+	font="Zeppelin32";
+	sizeEx=0.020000;
+};
+
+
+// ----------------- Třídy titulků -------------------
+class RscTitles 
+{ 
+	titles[] = 
+	{
+
+		CELO_titlesorb,
+		CELO_titlesceloush,
+		CELO_titlesuvadi,
+		CELO_titleskonec,
+		CELO_titlespokracovani,
+	};
+
+	class CELO_titlesorb
+	{
+		name = "";
+		duration = 6;
+		idd = -1;
+		movingEnable = false;
+		
+		controls[]= {text};
+
+		class text: CELO_RscText
+		{
+			style = ST_MULTI + ST_CENTER + ST_NO_RECT;
+			lineSpacing = 1.0;
+			text = $STR_CELO_title3;
+			x = 0.01; y = 0.4; w = 0.99; h = 0.5;
+			colorText[] = {0, 0.5, 0, 1};
+			font = "Zeppelin32";
+			sizeEx = 0.15;
+			size = 0.3;
+		};
+
+	};
+
+	class CELO_titleskonec
+	{
+		name = "";
+		duration = 9;
+		idd = -1;
+		movingEnable = false;
+		
+		controls[]= {text};
+
+		class text: CELO_RscText
+		{
+			style = ST_MULTI + ST_CENTER + ST_NO_RECT;
+			lineSpacing = 1.0;
+			text = $STR_CELO_title4;
+			x = 0.1; y = 0.4; w = 0.9; h = 0.5;
+			colorText[] = {0, 0.5, 0, 1};
+			font = "Zeppelin32";
+			sizeEx = 0.15;
+			size = 0.3;
+		};
+
+	};
+
+	class CELO_titlespokracovani
+	{
+		name = "";
+		duration = 7;
+		idd = -1;
+		movingEnable = false;
+		
+		controls[]= {text};
+
+		class text: CELO_RscText
+		{
+			style = ST_MULTI + ST_CENTER + ST_NO_RECT;
+			lineSpacing = 1.0;
+			text = $STR_CELO_title5;
+			x = 0.1; y = 0.4; w = 0.9; h = 0.5;
+			colorText[] = {0, 0.5, 0, 1};
+			font = "Zeppelin32";
+			sizeEx = 0.15;
+			size = 0.3;
+		};
+
+	};
+
+	class CELO_titlesceloush
+	{
+		name = "";
+		duration = 6;
+		idd = -1;
+		movingEnable = false;
+		
+		controls[]= {text};
+
+		class text: CELO_RscText
+		{
+			style = ST_MULTI + ST_CENTER + ST_NO_RECT;
+			lineSpacing = 1.0;
+			text = $STR_CELO_title1;
+			x = 0.17; y = 0.4; w = 0.66; h = 0.2;
+			colorText[] = {0, 0.5, 0, 1};
+			font = "Zeppelin32";
+			sizeEx = 0.15;
+			size = 0.3;
+		};
+
+	};
+
+	class CELO_titlesuvadi
+	{
+		name = "";
+		duration = 6;
+		idd = -1;
+		movingEnable = false;
+		
+		controls[]= {text};
+
+		class text: CELO_RscText
+		{
+			style = ST_MULTI + ST_CENTER + ST_NO_RECT;
+			lineSpacing = 1.0;
+			text = $STR_CELO_title2;
+			x = 0.17; y = 0.4; w = 0.66; h = 0.2;
+			colorText[] = {0, 0.5, 0, 1};
+			font = "Zeppelin32";
+			sizeEx = 0.15;
+			size = 0.3;
+		};
+
+	};
+
+};
+
+
+class CfgMusic
+{
+ tracks[]={};
+
+ class CELO_Christmas_intro
+ {
+  name = "Vánoční závod - intro";
+  sound[] = {"\music\christmas.ogg", db+0, 1.0};
+ };
+
+
+};
